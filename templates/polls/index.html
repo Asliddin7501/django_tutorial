@@ -1,0 +1,24 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap-4.6.0-dist/css/bootstrap.css' %}">
+</head>
+<body>
+{% for telefon in telefonlar %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h4 class="card-title">{{ telefon.kompaniya_nomi }}</h4>
+            <h5 class="card-title">{{ telefon.rusumi }}</h5>
+            <p class="card-text">{{ telefon.tezkor_xotirasi }}/{{ telefon.xotirasi }}Gb</p>
+            <p class="card-text">{{ telefon.narxi }} y.e</p>
+            <a href="#" class="btn btn-primary">Sotib olish</a>
+        </div>
+    </div>
+{% endfor %}
+
+<script src="{% static 'vendor/bootstrap-4.6.0-dist/js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>
