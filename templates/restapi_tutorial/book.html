@@ -1,3 +1,4 @@
+{% load helpers %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,6 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    <span>{{ book_data }}</span>
+    {% for book in book_data %}
+        <span>{{ book|from_dict:"name" }}</span>
+    {% endfor %}
 </body>
 </html>

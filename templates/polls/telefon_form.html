@@ -1,0 +1,31 @@
+{% load crispy_forms_filters %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap-4.6.0-dist/css/bootstrap.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-lg-3">
+            <div class="card">
+                <div class="card-header">Telefon qo'shish uchun forma</div>
+                <form action="{% url 'polls:create' %}" method="POST">
+                    <div class="card-body">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Qo'shish</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'vendor/bootstrap-4.6.0-dist/js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>
